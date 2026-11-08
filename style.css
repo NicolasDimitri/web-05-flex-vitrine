@@ -2,4 +2,22 @@ body {
     margin: 0;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
+}
+
+.header .logo {
+    box-sizing: border-box;
+
+}
+
+.header .container {
+    box-sizing: border-box;
+}
+
+.topbar {
+    display: flex;
+}
+
+.menu {
+    
 }
