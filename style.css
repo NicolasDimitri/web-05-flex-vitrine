@@ -9,7 +9,7 @@ body {
 .topbar {
     display: flex;
     align-items: center;
-    justify-content:left;
+    justify-content: left;
     box-sizing: border-box;
 }
 
@@ -48,7 +48,7 @@ body {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    flex-grow: 1;
+    flex-grow: flex 1;
 }
 
 
