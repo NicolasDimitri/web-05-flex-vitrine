@@ -45,6 +45,8 @@ header.topbar.logo {
     justify-content: center;
     align-items: center;
     margin-top: auto;
+    min-width: 325px;
+    min-height: ;
 }
 
 .card.btn {
