@@ -39,6 +39,10 @@ header.topbar.logo {
 
 .card {
     box-sizing: border-box;
+    width: 1045px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card.btn {
