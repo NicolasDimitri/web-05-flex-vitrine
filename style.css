@@ -41,6 +41,7 @@ header.topbar.logo {
     flex-basis: 250px;
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: auto;
