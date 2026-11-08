@@ -8,13 +8,17 @@ body {
 
 .topbar {
     display: flex;
+    align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .topbar a {}
 
 .cards {
     display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
     box-sizing: border-box;
 }
 
@@ -22,22 +26,31 @@ body {
     box-sizing: border-box;
 }
 
+.card .btn {
+    align-self: flex-start;
+}
+
 .container {
+    max-width: 1100;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
     flex-grow: 1;
-
+    flex: 1;
 }
 
 .menu {
     display: flex;
-    justify-content: baseline;
-    gap: 20px;
-    text-decoration: none;
 }
 
 .menu ul {
+    display: flex;
+    justify-content: baseline;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.rodape {
     display: flex;
 }
