@@ -9,12 +9,11 @@ body {
 .topbar {
     display: flex;
     align-items: center;
-    justify-content: left;
     box-sizing: border-box;
+    margin-left: auto;
 }
 
 .btn {
-    margin-left: auto;
 }
 
 .logo img {
@@ -73,5 +72,4 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
 }
