@@ -8,29 +8,26 @@ body {
 
 .topbar {
     display: flex;
-    flex-grow: 1;
-    align-items: center;
-    /* flex: 1; */
+    justify-content: center;
 }
 
-.topbar a {
-    box-sizing: border-box;
-}
+.topbar a {}
 
 .cards {
-    box-sizing: border-box;
+    display: flex;
 }
 
-.card {
-    box-sizing: border-box;
-}
+.card {}
 
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1000px;
+    box-sizing: border-box;
+    flex-grow: 1;
+
 }
+
 .menu {
     display: flex;
     justify-content: baseline;
@@ -41,4 +38,3 @@ body {
 .menu ul {
     display: flex;
 }
-
