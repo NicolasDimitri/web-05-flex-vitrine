@@ -38,8 +38,11 @@ body {
     display: flex;
     justify-content: baseline;
     gap: 12px;
-    text-decoration: none;
     list-style: none;
+}
+
+.menu ul li a {
+    text-decoration: none;
 }
 
 .container {
@@ -50,7 +53,6 @@ body {
     box-sizing: border-box;
     flex-grow: flex 1;
 }
-
 
 .rodape {
     display: flex;
