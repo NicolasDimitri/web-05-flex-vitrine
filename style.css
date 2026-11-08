@@ -11,6 +11,7 @@ header.topbar {
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 header.topbar.logo {
@@ -28,8 +29,6 @@ header.topbar.logo {
     height: 50px;
 }
 
-.topbar a {}
-
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -40,6 +39,7 @@ header.topbar.logo {
 .card {
     box-sizing: border-box;
     flex-basis: 350px;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,11 +52,14 @@ header.topbar.logo {
 
 .menu {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu ul {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 12px;
     list-style: none;
 }
