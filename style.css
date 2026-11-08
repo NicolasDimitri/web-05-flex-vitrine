@@ -1,23 +1,20 @@
 body {
     margin: 0;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-}
-
-.header .logo {
-    box-sizing: border-box;
-
-}
-
-.header .container {
-    box-sizing: border-box;
+    min-height: 100vh;
 }
 
 .topbar {
     display: flex;
+    flex-grow: 1;
+    /* flex: 1; */
+}
+
+.topbar a {
+    box-sizing: border-box;
 }
 
 .menu {
-    
+
 }
