@@ -15,9 +15,12 @@ body {
 
 .cards {
     display: flex;
+    box-sizing: border-box;
 }
 
-.card {}
+.card {
+    box-sizing: border-box;
+}
 
 .container {
     display: flex;
