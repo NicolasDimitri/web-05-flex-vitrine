@@ -65,8 +65,9 @@ body {
     flex-grow: flex 1;
 }
 
-.rodape {
+body footer .rodape {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: row;
 }
