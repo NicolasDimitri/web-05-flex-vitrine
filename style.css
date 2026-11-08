@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #23332f;
+  background: #f7f8f4;
+}
+
+a {
+  color: inherit;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e4e9e2;
+}
+
+.logo {
+  color: #245c4b;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  color: #43534d;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  color: #167052;
+  text-decoration: underline;
+}
+
+.btn-login {
+  margin-left: auto;
+  padding: 10px 18px;
+  border: 1px solid #245c4b;
+  border-radius: 6px;
+  color: #245c4b;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-login:hover,
+.btn-login:focus-visible {
+  color: #fff;
+  background: #245c4b;
+}
+
+.container {
+  width: calc(100% - 32px);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 0;
+  flex-grow: 1;
+}
+
+.container h1 {
+  margin: 0 0 12px;
+  color: #1d473b;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.introducao {
+  margin: 0 0 32px;
+  color: #63716b;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex: 1 1 300px;
+  flex-direction: column;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #e1e8df;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(34 68 54 / 6%);
+}
+
+.categoria {
+  margin-bottom: 10px;
+  color: #53816d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  color: #264b3f;
+  font-size: 1.3rem;
+}
+
+.card p {
+  margin: 0 0 24px;
+  color: #586760;
+  line-height: 1.6;
+}
+
+.btn {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 11px 18px;
+  border-radius: 6px;
+  color: #fff;
+  background: #28775b;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #1d5b44;
+}
+
+.rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  color: #eaf3ed;
+  background: #203d34;
+}

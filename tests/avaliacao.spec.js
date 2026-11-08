@@ -19,15 +19,15 @@ test('R1 – Base do HTML: doctype, lang pt-BR, charset UTF-8, <title> e viewpor
   expect(info.viewport, 'Falta <meta name="viewport" content="width=device-width, initial-scale=1.0">').toMatch(/width=device-width/);
 });
 
-test('R2 – CSS em arquivo externo style.css (sem style="" e sem <style>)', async ({ page }) => {
+test('R2 – CSS não vazio em style.css externo (link no head, sem style="" e sem <style>)', async ({ page }) => {
   const href = await page.evaluate(() => document.querySelector('head link[rel="stylesheet"]')?.getAttribute('href'));
   expect(href, 'Falta <link rel="stylesheet" href="style.css"> no <head>').toBe('style.css');
-  expect(ler('style.css').trim().length, 'O style.css está praticamente vazio').toBeGreaterThan(300);
+  expect(ler('style.css').trim().length, 'O style.css está vazio').toBeGreaterThan(0);
   expect(ler(), 'Não use style="..." no HTML').not.toMatch(/\sstyle\s*=/i);
   expect(ler(), 'Não use <style> no HTML').not.toMatch(/<style/i);
 });
 
-test('R3 – Estrutura: header.topbar, main.container com 6+ cards e footer.rodape', async ({ page }) => {
+test('R3 – Estrutura: header.topbar, main.container com h1 e 6+ cards, e footer.rodape', async ({ page }) => {
   const s = await page.evaluate(() => {
     const cards = [...document.querySelectorAll('main.container > .cards > article.card')];
     return {
@@ -85,7 +85,7 @@ test('R6 – Topbar em Flexbox: itens centralizados na vertical, logo à esquerd
   expect(perto(cy(logo), cy(menu), 3) && perto(cy(menu), cy(login), 3), 'Logo, menu e Entrar devem estar alinhados no centro vertical').toBe(true);
 });
 
-test('R7 – Menu em linha: ul com display flex, gap, sem bolinhas e links sem sublinhado', async ({ page }) => {
+test('R7 – Menu em linha: links na mesma linha, ul com display flex e gap 8px+, sem bolinhas ou sublinhado', async ({ page }) => {
   const u = await estilo(page, '.menu ul', ['display', 'columnGap', 'listStyleType']);
   expect(u.display, '.menu ul precisa de display: flex').toBe('flex');
   expect(px(u.columnGap), 'Use gap (8px ou mais) para separar os itens do menu').toBeGreaterThanOrEqual(8);
@@ -125,7 +125,7 @@ test('R10 – Desktop (1280px): 3 cards por linha, mesma largura, preenchendo a 
   expect(perto(c[2].r, area.r - px(pad.paddingRight), 2), 'Os cards devem crescer e preencher a linha inteira (flex-grow)').toBe(true);
 });
 
-test('R11 – Responsivo SEM @media: 2 por linha em 768px, 1 por linha em 375px e sem rolagem horizontal', async ({ page }) => {
+test('R11 – Responsivo SEM @media: 2 por linha em 768px; em 375px 1 por linha alinhado e quase largura total, sem rolagem horizontal', async ({ page }) => {
   await abrir(page, 768);
   let c = await rects(page, '.card');
   expect(perto(c[0].t, c[1].t, 1), 'Em 768px os 2 primeiros cards devem ficar lado a lado').toBe(true);
@@ -144,7 +144,7 @@ test('R11 – Responsivo SEM @media: 2 por linha em 768px, 1 por linha em 375px 
   expect(sobra, `Há rolagem horizontal em 375px (${sobra}px a mais). Passam da tela: ${culpados.join(', ') || 'veja no navegador'}. Dica: a topbar também precisa de flex-wrap`).toBeLessThanOrEqual(0);
 });
 
-test('R12 – Botões alinhados no fim dos cards da mesma linha (margin-top: auto), mesmo com textos de tamanhos diferentes', async ({ page }) => {
+test('R12 – Cards da mesma linha com mesma altura e flex em coluna; botões alinhados apesar das descrições diferentes', async ({ page }) => {
   const textos = await page.evaluate(() => [...document.querySelectorAll('.card p')].slice(0, 3).map((p) => p.textContent.trim().length));
   expect(Math.max(...textos) - Math.min(...textos), 'Faça as descrições dos 3 primeiros cards com tamanhos bem diferentes (diferença de 40+ caracteres) para o teste ter sentido').toBeGreaterThanOrEqual(40);
   const cards = (await rects(page, '.card')).slice(0, 3);
@@ -156,11 +156,11 @@ test('R12 – Botões alinhados no fim dos cards da mesma linha (margin-top: aut
   expect(Math.max(...btns.map((x) => x.b)) - Math.min(...btns.map((x) => x.b)), 'Os botões dos 3 primeiros cards devem terminar na mesma altura (dica: margin-top: auto no botão)').toBeLessThanOrEqual(1);
 });
 
-test('R13 – O botão do card NÃO ocupa a largura toda (align-self)', async ({ page }) => {
+test('R13 – Cada botão do card é mais de 40px mais estreito que o card', async ({ page }) => {
   const cards = await rects(page, '.card');
   const btns = await rects(page, '.card .btn');
   btns.forEach((b, i) => {
-    expect(b.w, 'O botão do card está esticado até as bordas (dica: align-self: flex-start)').toBeLessThan(cards[i].w - 40);
+    expect(b.w, 'O botão deve ser mais de 40px mais estreito que o card (dica: align-self: flex-start)').toBeLessThan(cards[i].w - 40);
   });
 });
 

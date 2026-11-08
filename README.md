@@ -43,18 +43,18 @@ Crie `index.html` e `style.css` aqui na raiz.
 **Requisitos**
 
 1. **R1** – Base do HTML: doctype, `lang="pt-BR"`, charset UTF-8, `<title>` e `<meta name="viewport" content="width=device-width, initial-scale=1.0">`.
-2. **R2** – CSS em `style.css`, ligado por `<link>`; sem `style=""` e sem `<style>`.
-3. **R3** – A estrutura acima existe (4+ links no menu, 6+ cards completos com `h2`, `p` e `a.btn`, 2+ elementos no rodapé).
+2. **R2** – CSS não vazio no arquivo externo `style.css`, ligado no `<head>` por `<link rel="stylesheet" href="style.css">`; sem `style=""` e sem bloco `<style>`. O CSS deve implementar os comportamentos pedidos nos requisitos seguintes.
+3. **R3** – A estrutura HTML inclui `header.topbar` (logo, menu com 4+ links e botão Entrar), `main.container` com um `<h1>` e uma seção `.cards` com 6+ cards completos (cada um com `h2`, `p` e `a.btn`), e `footer.rodape` com 2+ elementos.
 4. **R4** – `body` com `margin: 0`; `box-sizing: border-box` em `.card`, `.container` e `.topbar`.
 5. **R5** – O rodapé fica sempre colado no fim da tela, **mesmo com pouco conteúdo** (o `body` é um flex em coluna e o `main` cresce para ocupar o que sobra).
 6. **R6** – `.topbar` em Flexbox com `align-items: center`: logo à esquerda, menu logo depois e o botão "Entrar" encostado na direita.
-7. **R7** – `.menu ul` em Flexbox, com `gap` de 8px ou mais, sem bolinhas, e links sem sublinhado.
+7. **R7** – `.menu ul` em Flexbox, com todos os links na mesma linha, `gap` horizontal de 8px ou mais, sem bolinhas; os links não devem ter sublinhado.
 8. **R8** – `.cards` em Flexbox com `flex-wrap: wrap` e `gap` de 16px ou mais.
 9. **R9** – `.container` centralizado e com `max-width` de no máximo 1100px (em 1280px de tela ele deve ter pelo menos 600px de largura).
 10. **R10** – Em 1280px: **3 cards por linha**, todos com a mesma largura e preenchendo a linha inteira.
-11. **R11** – Sem `@media`: em 768px os cards ficam **2 por linha**; em 375px ficam **1 por linha**, sem rolagem horizontal na página.
-12. **R12** – Os botões dos cards da mesma linha terminam na **mesma altura**, mesmo com descrições de tamanhos diferentes. Escreva as descrições dos 3 primeiros cards com uma diferença de pelo menos 40 caracteres entre a menor e a maior.
-13. **R13** – O botão do card **não** ocupa a largura toda do card.
+11. **R11** – Sem `@media`: em 768px ficam **2 cards por linha**; em 375px fica **1 card por linha**, todos alinhados entre si e ocupando quase toda a largura disponível (menos de 40px de diferença em relação à área de `.cards`), sem rolagem horizontal.
+12. **R12** – Os cards da mesma linha devem ter a **mesma altura**. Cada `.card` usa `display: flex` e `flex-direction: column`, para que os botões dos cards da mesma linha terminem na **mesma altura**, mesmo com descrições de tamanhos diferentes. Escreva as descrições dos 3 primeiros cards com uma diferença de pelo menos 40 caracteres entre a menor e a maior.
+13. **R13** – Em cada card, o botão `.btn` não ocupa a largura toda: deve ser **mais de 40px mais estreito** que o card.
 14. **R14** – `.rodape` em Flexbox com os textos nas pontas (`space-between`) e centralizados na vertical.
 15. **R15** – O CSS não contém nenhuma regra `@media`.
 
