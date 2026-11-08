@@ -76,7 +76,7 @@ header.topbar.logo {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    flex-grow: flex 1;
+    flex-grow: 1;
     flex-direction: column;
 }
 
