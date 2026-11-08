@@ -6,14 +6,16 @@ body {
     box-sizing: border-box;
 }
 
-.topbar {
+header.topbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     box-sizing: border-box;
-    margin-left: auto;
 }
 
-.btn {
+header.topbar.logo {
+    display: flex;
+    justify-content: right;
 }
 
 .logo img {
@@ -39,7 +41,7 @@ body {
     box-sizing: border-box;
 }
 
-.card .btn {
+.card.btn {
     align-self: flex-start;
 }
 
@@ -49,7 +51,7 @@ body {
 
 .menu ul {
     display: flex;
-    justify-content: baseline;
+    justify-content: center;
     gap: 12px;
     list-style: none;
 }
