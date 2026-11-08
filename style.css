@@ -8,6 +8,7 @@ body {
 .topbar {
     display: flex;
     flex-grow: 1;
+    align-items: center;
     /* flex: 1; */
 }
 
@@ -15,6 +16,20 @@ body {
     box-sizing: border-box;
 }
 
-.menu {
-
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
 }
+.menu {
+    display: flex;
+    justify-content: baseline;
+    gap: 20px;
+    text-decoration: none;
+}
+
+.menu ul {
+    display: flex;
+}
+
